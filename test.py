@@ -21,6 +21,11 @@ def select_model(args, device):
         name = f"{model_id:02}_CodeFormer_baseline"
         model_path = os.path.join('model_zoo', 'team00_CodeFormer')
         model_func = CodeFormer
+    elif model_id == 15:
+        from models.team15_NAFNet.nafnet import main as NAFNet
+        name = f"{model_id:02}_NAFNet"
+        model_path = os.path.join('model_zoo', 'team15_NAFNet')
+        model_func = NAFNet
     else:
         raise NotImplementedError(f"Model {model_id} is not implemented.")
 
